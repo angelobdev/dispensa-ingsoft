@@ -53,7 +53,7 @@ UML distingue operazioni (dichiarazione di una procedura) e metodi (corpo dell'o
 
 \subparagraph{Static} Vengono definiti \textit{static} quegli attributi o quelle operazioni che si riferiscono alla classe e non alle sue istanze. Nel diagramma le caratteristiche \textit{static} vengono sottolineate.
 
-\paragraph{Generalizzazione} Anche i class diagram ammettono relazioni di generalizzazione che partono da classi \textit{specializzate} e puntano ad una classe \textit{generale}. In Java viene espressa con il concetto di \textit{ereditarietà} (classe specializzata sottoclasse di classe generica o superclasse - \textbf{Principio di sostituibilità di Liskov}, vedi \ref{liskov}).
+\paragraph{Generalizzazione} Anche i class diagram ammettono relazioni di generalizzazione che partono da classi \textit{specializzate} e puntano ad una classe \textit{generale}. In Java viene espressa con il concetto di \textit{ereditarietà} (classe specializzata sottoclasse di classe generica o superclasse - \textbf{Principio di sostituibilità di Liskov}).
 
 \begin{figure}[H]
     \centering
@@ -62,6 +62,7 @@ UML distingue operazioni (dichiarazione di una procedura) e metodi (corpo dell'o
 \end{figure}
 
 \newpage
+
 Di seguito un esempio in Java che non rispetta il principio di Liskov:
 \begin{verbatim}
 public class Rettangolo {

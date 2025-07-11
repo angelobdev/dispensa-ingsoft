@@ -1,9 +1,9 @@
 \subsection{Sequence}
 
-I \textbf{diagrammi di sequenza} appartengono alla categoria dei diagrammi di interazione, i quali descrivono la collaborazione di un gruppo di oggetti che devono implementare un certo comportamento. Un diagramma di sequenza documenta tipicamente il comportamento di un singolo scenario. Il diagramma include un certo numero di oggetti e i messaggi scambiati tra di essi durante l’esecuzione del caso d’uso.
+I \textbf{diagrammi di sequenza} appartengono alla categoria dei diagrammi di interazione, i quali descrivono la collaborazione di un gruppo di oggetti che devono implementare un certo comportamento. Un diagramma di sequenza documenta tipicamente il comportamento di un singolo scenario. Il diagramma include un certo numero di oggetti e i messaggi scambiati tra essi durante l’esecuzione del caso d’uso.
 
 \paragraph{Esempio: calcolo del prezzo di un ordine}
-L’ordine deve calcolare il prezzo di ciascuna linea. Per farlo occorre ottenere la quantità relativa al prodotto ed il suo prezzo unitario. Una volta calcolato il prezzo totale, si calcola lo sconto che dipende dallo specifico cliente. Queste interazioni sono illustrate nel diagramma di sequenza riportato di seguito.
+L’ordine deve calcolare il prezzo di ciascuna linea. Per farlo, occorre ottenere la quantità relativa al prodotto e il suo prezzo unitario. Una volta calcolato il prezzo totale, si calcola lo sconto che dipende dallo specifico cliente. Queste interazioni sono illustrate nel diagramma di sequenza riportato di seguito.
 
 \begin{figure}[H]
     \centering
@@ -12,7 +12,7 @@ L’ordine deve calcolare il prezzo di ciascuna linea. Per farlo occorre ottener
 \end{figure}
 
 \paragraph{Elementi di un diagramma di sequenza}
-Ciascun partecipante è rappresentato da un box che contiene il nome (nella notazione degli Object Diagram ma non sottolineato) e da una linea tratteggiata verticale detta \textbf{linea di vita} (\textit{lifeline}). L’ordinamento dei messaggi è determinato scorrendo il diagramma dall’alto verso il basso. Ogni linea di vita ha una barra di attivazione che indica quando il partecipante è attivo nell’interazione. Le frecce indicano i messaggi (invocazioni) e sono etichettate con il nome del messaggio (nome del metodo). Le frecce di ritorno sono opzionali e possono riportare il valore risultante dall’invocazione.
+Ciascun partecipante è rappresentato da un box che contiene il nome (nella notazione degli Object Diagram, ma non sottolineato) e da una linea tratteggiata verticale detta \textbf{linea di vita} (\textit{lifeline}). L’ordinamento dei messaggi è determinato scorrendo il diagramma dall’alto verso il basso. Ogni linea di vita ha una barra di attivazione che indica quando il partecipante è attivo nell’interazione. Le frecce indicano i messaggi (invocazioni) e sono etichettate con il nome del messaggio (nome del metodo). Le frecce di ritorno sono opzionali e possono riportare il valore risultante dall’invocazione.
 
 \paragraph{Controllo centralizzato e controllo distribuito}
 Esistono due stili principali di interazione:
@@ -28,7 +28,7 @@ Esistono due stili principali di interazione:
 \end{figure}
 
 \paragraph{Creazione e distruzione dei partecipanti}
-I diagrammi di sequenza prevedono una notazione particolare per indicare la creazione e distruzione dei partecipanti:
+I diagrammi di sequenza prevedono una notazione particolare per indicare la creazione e la distruzione dei partecipanti:
 \begin{itemize}
     \item \textbf{Creazione}: la freccia del messaggio che causa la creazione punta al box del partecipante creato.
     \item \textbf{Distruzione}: indicata con una \textbf{X} posizionata sulla linea di vita. Può essere causata da un altro oggetto o essere autodistruzione.
@@ -61,7 +61,7 @@ Per rappresentare comportamenti ciclici e/o condizionali, si utilizzano i \textb
         \hline
         \textbf{neg} & Negativo; il frammento mostra un’interazione non valida. \\
         \hline
-        \textbf{ref} & Riferimento; si riferisce ad un’interazione mostrata in un altro diagramma. \\
+        \textbf{ref} & Riferimento; si riferisce a un’interazione mostrata in un altro diagramma. \\
         \hline
         \textbf{sd} & Sequence Diagram; usato per racchiudere un intero diagramma di sequenza. \\
         \hline
@@ -76,7 +76,7 @@ Per rappresentare comportamenti ciclici e/o condizionali, si utilizzano i \textb
 \end{figure}
 
 \paragraph{Chiamate sincrone e asincrone}
-UML distingue i messaggi sincroni dai messaggi asincroni dal tipo di freccia utilizzata:
+UML distingue i messaggi sincroni dai messaggi asincroni tramite il tipo di freccia utilizzata:
 \begin{itemize}
     \item \textbf{Messaggi sincroni}: freccia con punta a forma di triangolo pieno. L’oggetto che invia il messaggio deve attendere la risposta prima di proseguire.
     \item \textbf{Messaggi asincroni}: freccia con punta costituita da due linee sottili. Utilizzati nelle applicazioni multi-thread o distribuite.

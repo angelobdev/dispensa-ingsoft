@@ -6,7 +6,7 @@ Il modello di sviluppo (ciclico) seguito era molto semplice:
     \item \textit{Code}: fase di implementazione
     \item \textit{Fix}: fase di manutenzione
 \end{enumerate}
-Approccio fallimentare, faceva errato uso della \textit{duttilità} del software. Portò alla \textit{crisi dell'ingegneria del software} (anni '80), che (tra le altre) introdusse il \textit{problema del feedback}: riscontro tempestivo (da parte del committente) sul lavoro svolto (dal team di sviluppo).
+Approccio fallimentare, faceva errato uso della \textit{duttilità} del software. Portò alla \textit{crisi dell'ingegneria del software} (anni '80), che (tra le altre cose) introdusse il \textit{problema del feedback}: riscontro tempestivo (da parte del committente) sul lavoro svolto (dal team di sviluppo).
 
 \section{Obiettivi del processo}
 
@@ -18,12 +18,12 @@ Gli \textbf{\textit{obiettivi del processo}} di sviluppo sono:
     \item Qualità del prodotto
 \end{enumerate}
 
-\paragraph{Modello di produzione (\textit{Boehm, 1988})} Basato su l'\textit{ordine degli stadi coinvolti} e \textit{criteri di transizione}: consentono di progredire dallo stadio corrente a quello successivo. Definisce relazioni ed ordine di esecuzione delle attività (le quali prevedono dei "prodotti intermedi" come output per la prossima fase).
+\paragraph{Modello di produzione (\textit{Boehm, 1988})} Basato sull'\textit{ordine degli stadi coinvolti} e su \textit{criteri di transizione}: consentono di progredire dallo stadio corrente a quello successivo. Definisce relazioni e ordine di esecuzione delle attività (le quali prevedono dei "prodotti intermedi" come output per la prossima fase).
 
 \begin{figure}[ht!]
     \centering
     \includegraphics[width=0.8\linewidth]{assets/processo_esplicito.png}
-    \caption{Se si segue un \textbf{modello esplicito} lo sviluppo software procede in modo ordinato e prevedibile (riduzione degli errori)}
+    \caption{Se si segue un \textbf{modello esplicito} lo sviluppo software procede in modo ordinato e prevedibile (riduzione degli errori).}
 \end{figure}
 
 \begin{figure}[ht!]
@@ -44,7 +44,7 @@ Viene eseguito da personale qualificato, consiste in una simulazione del process
     \item Elenca soluzioni alternative (costi e benefici)
     \item Esplicita risorse richieste, costi e date di consegna
 \end{itemize}
-La \textit{\textbf{SWOT Analysis}} è uno strumento di pianificazione strategica per progetti che richiedono decisioni ad ogni raggiungimento di obiettivo. Distingue i seguenti elementi:
+La \textit{\textbf{SWOT Analysis}} è uno strumento di pianificazione strategica per progetti che richiedono decisioni a ogni raggiungimento di obiettivo. Distingue i seguenti elementi:
 \begin{itemize}
     \item \textit{Strengths}: interne al progetto, utili.
     \item \textit{Weaknesses}: interne al progetto, di ostacolo.
@@ -53,23 +53,23 @@ La \textit{\textbf{SWOT Analysis}} è uno strumento di pianificazione strategica
 \end{itemize}
 
 \subsection{Analisi e specifica dei requisiti}
-Consiste nello:
+Consiste nel:
 \begin{itemize}
     \item stabilire se le richieste del cliente (\textit{requisiti}) siano soddisfacibili e con quale grado di qualità;
-    \item formalizzare le richieste in una serie di \textit{features} che l'applicazione deve assicurare (in un \textit{documento di specifica})
-    \item occuparsi dell'individuazione degli \textit{stakeholder} (persone, aziende, entità interessate al sisema)
+    \item formalizzare le richieste in una serie di \textit{features} che l'applicazione deve assicurare (in un \textit{documento di specifica});
+    \item occuparsi dell'individuazione degli \textit{stakeholder} (persone, aziende, entità interessate al sistema).
 \end{itemize}
 
 \paragraph{Modularizzazione orizzontale} Consiste nell'analizzare il progetto sullo stesso piano di astrazione da diversi punti di vista (uno per ogni aspetto del problema), strutturando il sistema come collezione di viste come:
 \begin{itemize}
     \item \textit{Modello dei dati} (Diagramma ER, Class diagram)
-    \item \textit{Modello delle funzioni eseguibili} (Flux o Use Case diagram)
+    \item \textit{Modello delle funzioni eseguibili} (Flow o Use Case diagram)
     \item \textit{Modello di controllo di esecuzione} (Reti di Petri, State diagram)
 \end{itemize}
 
 \paragraph{Classificazione dei requisiti}
 \begin{itemize}
-    \item \textbf{MUST}: relativi alla \textit{correttezza}, requisiti minimi per considerare il sistema accetabile;
+    \item \textbf{MUST}: relativi alla \textit{correttezza}, requisiti minimi per considerare il sistema accettabile;
     \item \textbf{SHOULD}: relativi alla \textit{robustezza}, requisiti desiderabili, ma la cui omissione non compromette le funzionalità di base;
     \item \textbf{MAY}: requisiti facoltativi, tralasciabili in caso di mancanza di risorse.
 \end{itemize}
@@ -79,22 +79,22 @@ Consiste nello:
     \item \textit{Dominio}: breve descrizione del dominio applicativo e obiettivi da raggiungere.
     \item \textit{Requisiti funzionali}: descrivono cosa dovrà fare il prodotto (formali).
     \item \textit{Requisiti non funzionali}
-    \item \textit{Requisiti del processo di sviluppo e manutenzione}: procedure di controllo qualità, priorità di sviluppo tra, possibili cambiamenti del sistema.
+    \item \textit{Requisiti del processo di sviluppo e manutenzione}: procedure di controllo qualità, priorità di sviluppo, possibili cambiamenti del sistema.
 \end{itemize}
 
 \subsection{Definizione e progettazione dell'architettura software}
 Produzione di un \textit{documento di specifica di progetto} che descrive la struttura del sistema in termini di \textit{componenti}, relative interfacce e relazioni fra essi (motivando ogni scelta). Può richiedere l'uso di notazioni standard (come \textit{UML}).
 
 \subsection{Produzione di codice e test di moduli}
-Il team di programmatori procede ad implementare e testare i singoli moduli (in maniera indipendente). L'output di questa fase è il codice sorgente dei moduli.
+Il team di programmatori procede a implementare e testare i singoli moduli (in maniera indipendente). L'output di questa fase è il codice sorgente dei moduli.
 
 \subsection{Integrazione e test del sistema}
-Fase di assemblaggio del sistema a partire dai singoli moduli (seguendo criteri \textit{top-down} o \textit{bottom-up}). Nel caso di modelli incrementali i moduli sono sviluppati, testati e integrati nel sistema man mano. L'applicazione completa viene sottoposta ad un primo test (\textbf{\textit{"Alpha test"}})
+Fase di assemblaggio del sistema a partire dai singoli moduli (seguendo criteri \textit{top-down} o \textit{bottom-up}). Nel caso di modelli incrementali i moduli sono sviluppati, testati e integrati nel sistema man mano. L'applicazione completa viene sottoposta a un primo test (\textbf{\textit{"Alpha test"}}).
 
 \subsection{Rilascio, installazione e manutenzione}
 Il \textit{rilascio} avviene in due fasi:
 \begin{itemize}
-    \item Distribuzione ad un gruppo selezionato di clienti (\textbf{\textit{"Beta test"}})
+    \item Distribuzione a un gruppo selezionato di clienti (\textbf{\textit{"Beta test"}})
     \item Rilascio ufficiale sul mercato (\textit{\textbf{"Release"}})
 \end{itemize}
 L'\textit{installazione} definisce l'architettura del sistema a tempo di esecuzione.
