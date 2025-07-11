@@ -2,6 +2,10 @@
 
 Progetto LaTeX che comprende una serie di concetti di Ingegneria del Software e UML.
 
+## Download
+
+Per scaricare il file PDF compilato vai alla sezione [Release](https://github.com/angelobdev/dispensa-ingsoft/releases/)
+
 ## Guida di compilazione
 
 ### Prerequisiti
