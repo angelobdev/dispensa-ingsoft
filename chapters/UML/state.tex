@@ -1,13 +1,13 @@
 \subsection{State}
 
-Lo \textbf{state diagram} descrive entità/oggetti il cui comportamento può cambiare dinamicamente nel tempo in relazione a determinati eventi o messaggi ricevuti.\\
+Lo \textbf{state diagram} descrive entità/oggetti il cui comportamento può cambiare dinamicamente nel tempo in relazione a determinati eventi o messaggi ricevuti.
 
 Se la risposta dell'oggetto ad uno stimolo esterno non dipende unicamente dal suo stato corrente (valore dei campi), ma anche dalla sua storia (azioni passate eseguite in risposta a messaggi precedenti), si dice che l'oggetto possiede degli \textbf{stati di controllo}.
 
-\paragraph{Automa a stati finiti} Se il numero di possibili risposte alle sollecitazioni è finito l'oggetto possiede un \textbf{automa a stati finiti} (es. iterator), ovvero un grafo orientato i cui nodi sono stati di controllo e i cui archi rappresentano le \textbf{transizioni di stato}.\\
-Nell'approccio object-oriented un automa a stati finiti è associato a una classe e modella in maniera formale il comportamento delle sue istanze partendo da una specifica informale.\\
+\paragraph{Automa a stati finiti} Se il numero di possibili risposte alle sollecitazioni è finito l'oggetto possiede un \textbf{automa a stati finiti} (es. iterator), ovvero un grafo orientato i cui nodi sono stati di controllo e i cui archi rappresentano le \textbf{transizioni di stato}.
+Nell'approccio object-oriented un automa a stati finiti è associato a una classe e modella in maniera formale il comportamento delle sue istanze partendo da una specifica informale.
 
-\paragraph{Stato iniziale} Lo stato di controllo in cui l'oggetto viene a trovarsi subito dopo la creazione: viene specificato tramite una \textbf{pseudo-transizione} che emana da un cerchietto nero (\textit{pseudo-stato}).\\
+\paragraph{Stato iniziale} Lo stato di controllo in cui l'oggetto viene a trovarsi subito dopo la creazione: viene specificato tramite una \textbf{pseudo-transizione} che emana da un cerchietto nero (\textit{pseudo-stato}).
 
 \paragraph{Stati finali} Nodi dai quali non si hanno transizione. Una transizione di stato è causata da un evento (\textit{trigger}). Si possono specificare delle \textbf{azioni} (operazioni atomiche non interrompibili). A seconda del modo distinguiamo fra:
 \begin{itemize}
@@ -54,7 +54,7 @@ $$send\ target.evento(parametri)$$
 
 Scrivere dentro uno stato "evento/skip" specifica all'automa di ignorare il trigger quando si trova in quello stato.
 
-Gli statechart consentono di modellare delle gerarchie annidando gli stati di controllo: ogni stato è contenuto in uno stato di livello gerarchico superiore (\textbf{\textit{superstato}}) che può a sua volta contenere più stati di livello gerarchico inferiore (\textbf{\textit{sottostati}}). Si dice \textbf{\textit{foglia}} uno stato privo di sottostati. Uno statechart in cui tutti gli stati sono sullo stesso piano gerarchico viene detto \textbf{\textit{piatto}}.\\
+Gli statechart consentono di modellare delle gerarchie annidando gli stati di controllo: ogni stato è contenuto in uno stato di livello gerarchico superiore (\textbf{\textit{superstato}}) che può a sua volta contenere più stati di livello gerarchico inferiore (\textbf{\textit{sottostati}}). Si dice \textbf{\textit{foglia}} uno stato privo di sottostati. Uno statechart in cui tutti gli stati sono sullo stesso piano gerarchico viene detto \textbf{\textit{piatto}}.
 
 \begin{figure}[h!]
     \centering
@@ -62,13 +62,13 @@ Gli statechart consentono di modellare delle gerarchie annidando gli stati di co
     \caption{Esempio di state chart: controller di un treno}
 \end{figure}
 
-Per ogni stato non foglia una pseudo-transizione indica qual è il sottostato iniziale. Si definisce "configurazione" dell'automa il percorso che va dallo stato di più alto livello gerarchico fino allo stato foglia attuale. Nell'esempio, la configurazione iniziale dell'automa è la seguente:\\
+Per ogni stato non foglia una pseudo-transizione indica qual è il sottostato iniziale. Si definisce "configurazione" dell'automa il percorso che va dallo stato di più alto livello gerarchico fino allo stato foglia attuale. Nell'esempio, la configurazione iniziale dell'automa è la seguente:
 
 $$ControllerTop.NessunTreno.0pened$$
 
-\paragraph{OR-decomposition} Lo stato foglia attuale è sufficiente a definire univocamente la configurazione corrente dell'automa. Questo perché si è applicato il \textbf{principio dell'OR esclusivo} (XOR): in ogni stato NON foglia, l'automa deve trovarsi in uno e uno solo dei ossibili sottostati.\\
+\paragraph{OR-decomposition} Lo stato foglia attuale è sufficiente a definire univocamente la configurazione corrente dell'automa. Questo perché si è applicato il \textbf{principio dell'OR esclusivo} (XOR): in ogni stato NON foglia, l'automa deve trovarsi in uno e uno solo dei ossibili sottostati.
 
-Si definisce \textbf{transizione di gruppo} quella che parte da uno stato non foglia: può essere triggerata a presciendere dal sottostato specifico in cui si trova l'automa.\\ 
+Si definisce \textbf{transizione di gruppo} quella che parte da uno stato non foglia: può essere triggerata a presciendere dal sottostato specifico in cui si trova l'automa. 
 
 Un \textbf{connettore di storia} è un elemento posto all'interno di uno stato di controllo per consentire all'automa di memorizzare, quando si trova in quello stato, la configurazione corrente. Tornando nello stato l'automa non assumerà la configurazione di default, bensì quella memorizzata nel connettore. Esistono due tipi di connettori di storia:
 \begin{itemize}
@@ -94,7 +94,7 @@ Un \textbf{connettore di storia} è un elemento posto all'interno di uno stato d
     \caption{Esempio di stato ispezione}
 \end{figure}
 
-In generale i connettori di storia dovrebbero avere anche una transizione uscente verso un sottostato del macrostato in cui sono contenuti, in modo da poter essere attivati quando l'automa si trova in quello stato. In sua assenza e in assenza di memoria si raggiunge lo stato di default.\\
+In generale i connettori di storia dovrebbero avere anche una transizione uscente verso un sottostato del macrostato in cui sono contenuti, in modo da poter essere attivati quando l'automa si trova in quello stato. In sua assenza e in assenza di memoria si raggiunge lo stato di default.
 
 Sfruttando il principio di modularità, è possibile definire la gerarchia di uno solo dei possibili stati di controllo, astraendo dai dettagli interni degli altri stati. La presenza di stati non ancora definiti che sono punto di partenza/arrivo di transizioni è segnalata con un cosiddetto \textbf{state stub}.
 
@@ -105,7 +105,7 @@ Sfruttando il principio di modularità, è possibile definire la gerarchia di un
     \item \textbf{Entry path}: elenco degli stati di controllo in cui si entra, partendo dall'MCA (escluso) e scendendo fino allo stato destinazione della transizione. Si devono eseguire tutte le entry action degli stati attraversati.
 \end{itemize}
 
-L'MCA è il superstato di livello gerarchico più piccolo che contenga sia la destinazione che la sorgente della transizione.\\
+L'MCA è il superstato di livello gerarchico più piccolo che contenga sia la destinazione che la sorgente della transizione.
 
 \subsubsection{Estendere lo state diagram}
 
@@ -133,7 +133,8 @@ Nell'esempio, la configurazione inziale è:
 
 $$Conversazione.Parla|WatchTime$$ 
 
-Sottostati paralleli implicano l'esistenza di thread multipli in uno stesso oggetto (occorre adottare meccanismi di mutua esclusione per proteggere i dati condivisi).\\
+Sottostati paralleli implicano l'esistenza di thread multipli in uno stesso oggetto (occorre adottare meccanismi di mutua esclusione per proteggere i dati condivisi).
+
 Le transizioni nei due stati paralleli possono essere sincronizzate introducendo delle \textbf{barre di sincronizzazione} e degli \textbf{pseudo-stati di sincronismo} (synch state): l'avanzamento in un sottostato può awenire solo se nello stato parallelo si è raggiunto un certo punto.
 
 \begin{figure}[h!]

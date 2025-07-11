@@ -2,8 +2,8 @@
 
 Il \textbf{testing} è un sottoinsieme di un ambito più generale: la \textbf{\textit{verifica}}.
 Questa può essere \textit{soggettiva} o \textit{oggettiva}, e si può concentrare su qualità interne o esterne. Il risultato del processo di testing non è una risposta binaria (SI o NO), ma l'individuazione di difetti con diversi \textit{livelli di severità}.
-\\
-\\
+
+
 Gli \textit{approcci alla verifica} sono di tipo:
 \begin{itemize}
     \item \textbf{Dinamico} (testing) in cui si valuta il comportamento del software in esecuzione
@@ -74,8 +74,8 @@ Il criterio richiede un test set tale per cui esistano almeno 3 numeri interi: u
 \paragraph{Consistenza} Dato un criterio $C$, comunque si prendano $T_1, T_2 \in C$, $T_1$ ha successo SSE anche $T_2$ ha successo. Ergo: tutti i test set che soddisfano $C$ sono equivalenti e danno lo stesso risultato.
 
 \paragraph{Completezza} Un criterio $C$ è detto \textbf{completo} se, posto il programma $P$ non corretto, esiste almeno un test set $T \in C$ che non ha successo.
-\\
-\\
+
+
 Nella pratica non è possibile definire un algoritmo che stabilisca se un criterio sia consistente e completo. Ciò non significa che i test set possano essere scelti senza criterio ed in modo casuale (sarebbe inadeguato).
 
 \paragraph{Finezza} Un criterio $C_1$ si dice \textbf{più fine} di un criterio $C_2$ se investiga più casi, deve valere che:
@@ -90,8 +90,8 @@ Il testing, guidato dall'\textit{esperienza empirica}, è mirato alla definizion
 \end{center}
 che rispettano le proprietà: riflessiva, simmetrica e transitiva.
 Se i sottodomini sono \textit{disgiunti} ($D_i \cap D_j = \emptyset$) si dice che costituiscono una \textbf{partizione} di $D$. In una seconda fase si crea un test set selezionando un elemento per ogni sottodominio $D_i$, se non formano una partizione si possono scegliere gli elementi in comune per \textit{minimizzare} la dimensione del test set.
-\\
-\\
+
+
 I criteri di testing partizionano il dominio di input $D$ in \textbf{classi di equivalenza}, la maggior parte degli errori in un software tende a concentrarsi nelle “\textit{zone di confine}” fra le classi. Un test set dovrebbe prediligere le condizioni di confine (\textit{boundary}) rispetto alle condizioni interne.
 
 \section{Strategie di testing}

@@ -14,7 +14,9 @@ Gli \textbf{UseCase Diagram} servono per identificare le funzionalità svolte da
     \label{fig:use-case1}
 \end{figure}
 
-\paragraph{Attore} Rappresenta un ruolo interpretato da entità esterne (utenti o sistemi). L'\textbf{attore principale} è colui che persegue lo scopo del caso d'uso (gli altri sono secondari). Sussiste una relazione molti-a-molti tra attori e casi d'uso.\\ \textbf{\textit{Rappresentazione}}: omino stilizzato.
+\paragraph{Attore} Rappresenta un ruolo interpretato da entità esterne (utenti o sistemi). L'\textbf{attore principale} è colui che persegue lo scopo del caso d'uso (gli altri sono secondari). Sussiste una relazione molti-a-molti tra attori e casi d'uso.
+
+\textbf{\textit{Rappresentazione}}: omino stilizzato.
 
 \paragraph{Scenario} Sequenza di passi che caratterizza l'interazione complessa tra un attore ed il sistema software stesso. In particolare si distinguono:
 \begin{itemize}
@@ -35,7 +37,8 @@ Gli \textbf{UseCase Diagram} servono per identificare le funzionalità svolte da
     \item \textbf{Sea-level}: interazioni attore principale/sistema (livello mediano)
     \item \textbf{Fish-level}: esistono perché inclusi in un sea-level (livello profondo)
 \end{itemize}
-Un passo di caso d'uso corrisponde ad un'interazione tra attore e sistema; è descritto da una frase semplice e non esprime dettagli tecnici.\\
+Un passo di caso d'uso corrisponde ad un'interazione tra attore e sistema; è descritto da una frase semplice e non esprime dettagli tecnici.
+
 \textbf{\textit{Rappresentazione}}: ellisse contenente il nome del caso d'uso.
 
 \begin{figure}[h!]
@@ -45,7 +48,7 @@ Un passo di caso d'uso corrisponde ad un'interazione tra attore e sistema; è de
   \subfloat[Generalizzazione tra attori, ruolo figlio più specifico, \textit{compatibile} con il ruolo padre]{\includegraphics[width=0.25\linewidth]{assets/UML/use-case/use-case3.png}}
 \end{figure}
 
-\subparagraph{Estensione} Condizione che determina il verificarsi di interazioni diverse dallo scenario principale. Si indicano: il passo in cui si verifica la condizione, i passi (numerati) che descrivono le interazioni dell'estensione e (se necessario) il punto di rientro nello scenario principale.\\
+\subparagraph{Estensione} Condizione che determina il verificarsi di interazioni diverse dallo scenario principale. Si indicano: il passo in cui si verifica la condizione, i passi (numerati) che descrivono le interazioni dell'estensione e (se necessario) il punto di rientro nello scenario principale.
 \textbf{\textit{Rappresentazione}}: linea tratteggiata che termina con una freccia etichettata con la parola chiave $\langle\langle$extend$\rangle\rangle$
 
 \begin{figure}[h!]
@@ -55,7 +58,8 @@ Un passo di caso d'uso corrisponde ad un'interazione tra attore e sistema; è de
   \subfloat[Esempio di caso d'uso in forma testuale]{\includegraphics[width=0.48\linewidth]{assets/UML/use-case/use-case4.png}}
 \end{figure}
 
-\subparagraph{Inclusione} Scissione di un passo di un caso d'uso complicato, espresso come un altro caso d'uso completo (il primo \textit{include} il secondo). In forma testuale è sufficiente sottolineare il nome del caso d'uso incluso.\\
+\subparagraph{Inclusione} Scissione di un passo di un caso d'uso complicato, espresso come un altro caso d'uso completo (il primo \textit{include} il secondo). In forma testuale è sufficiente sottolineare il nome del caso d'uso incluso.
+
 \textbf{\textit{Rappresentazione}}: linea tratteggiata che termina con una freccia (dipendenza) etichettata con la parola chiave $\langle\langle$include$\rangle\rangle$
 
 \newpage
