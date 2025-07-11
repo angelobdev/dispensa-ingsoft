@@ -19,14 +19,14 @@ Nell'approccio object-oriented un automa a stati finiti è associato a una class
 \end{itemize}
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state1.png}
 \end{figure}
 
 I due formalismi sono equivalenti: è sempre possibile trasformare un automa di Mealy in un automa di Moore e viceversa (il numero di stati potrebbe essere diverso).
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state2.png}
     \caption{Esempio di automa: forno}
@@ -34,7 +34,7 @@ I due formalismi sono equivalenti: è sempre possibile trasformare un automa di 
 
 \paragraph{State Chart} Sono una generalizzazione degli automi a stati finiti, rispetto ad essi consentono di modellare situazioni più complesse.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.25\linewidth]{assets/UML/state/state3.png}
     \caption{Rappresentazione di uno stato di controllo in uno state chart}
@@ -56,7 +56,7 @@ Scrivere dentro uno stato "evento/skip" specifica all'automa di ignorare il trig
 
 Gli statechart consentono di modellare delle gerarchie annidando gli stati di controllo: ogni stato è contenuto in uno stato di livello gerarchico superiore (\textbf{\textit{superstato}}) che può a sua volta contenere più stati di livello gerarchico inferiore (\textbf{\textit{sottostati}}). Si dice \textbf{\textit{foglia}} uno stato privo di sottostati. Uno statechart in cui tutti gli stati sono sullo stesso piano gerarchico viene detto \textbf{\textit{piatto}}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state4.png}
     \caption{Esempio di state chart: controller di un treno}
@@ -76,19 +76,19 @@ Un \textbf{connettore di storia} è un elemento posto all'interno di uno stato d
     \item \textbf{Storia profonda (H*)}: memorizzano la configurazione dallo stato di livello gerarchico più alto fino allo stato foglia corrente, dunque scendendo in profondità oltre i sottostati dello stato contenente il connettore.
 \end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state5.png}
     \caption{Esempio di statechart per il Forno}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state6.png}
     \caption{Definizione del macrostato "Attivo"}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state7.png}
     \caption{Esempio di stato ispezione}
@@ -124,7 +124,7 @@ $$after time_expression$$
 
 \paragraph{AND-decomposition} Lo stato foglia attuale NON è sufficiente a definire univocamente la condizione corrente dell'automa. In ogni stato NON foglia, l'automa può trovarsi contemporaneamente in due o più possibili sottostati. Lo stato viene diviso in \textit{regioni} parallele e concorrenti.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state8.png}
 \end{figure}
@@ -137,7 +137,7 @@ Sottostati paralleli implicano l'esistenza di thread multipli in uno stesso ogge
 
 Le transizioni nei due stati paralleli possono essere sincronizzate introducendo delle \textbf{barre di sincronizzazione} e degli \textbf{pseudo-stati di sincronismo} (synch state): l'avanzamento in un sottostato può awenire solo se nello stato parallelo si è raggiunto un certo punto.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/state/state9.png}
 \end{figure}

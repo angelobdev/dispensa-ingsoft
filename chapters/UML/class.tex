@@ -2,7 +2,7 @@
 
 I \textbf{class diagram} sono i diagrammi UML più utilizzati. Descrivono le \textit{tipologie di oggetti} (classi) che fanno parte del sistema, e le loro relazioni statiche. Nella \textit{prospettiva concettuale} definiscono un vocabolario del dominio applicativo.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{assets/UML/class/class-1.png}
     \caption{Esempio di definizione di classe}
@@ -28,7 +28,7 @@ Non esiste un metodo univoco di traduzione, ma in linguaggi moderni quali Java l
 
 \subparagraph{Proprietà derivata} È una proprietà per la quale non serve introdurre un campo per memorizzarla e può essere calcolata a partire da altre proprietà, è indicata come attributo accompagnato dal simbolo "$/$" corredato da una nota che esprime come ottenerla. Esprime un vicolo (concetto di \textit{invariante di classe}) per le proprietà coinvolte.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/class/class-3.png}
     \caption{\textbf{Associazione bidirezionale} - ogni oggetto Persona può avere una collezione di oggetti Automobile; ogni oggetto Automobile può avere proprietà opzionale di tipo Persona}
@@ -55,7 +55,7 @@ UML distingue operazioni (dichiarazione di una procedura) e metodi (corpo dell'o
 
 \paragraph{Generalizzazione} Anche i class diagram ammettono relazioni di generalizzazione che partono da classi \textit{specializzate} e puntano ad una classe \textit{generale}. In Java viene espressa con il concetto di \textit{ereditarietà} (classe specializzata sottoclasse di classe generica o superclasse - \textbf{Principio di sostituibilità di Liskov}, vedi \ref{liskov}).
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/class/class-8.png}
     \caption{Esempio di generalizzazione}
@@ -90,19 +90,19 @@ I class diagram ammettono il concetto di \textit{classe astratta} (non istanziab
 
 La relazione che lega interfaccia e classe (astratta o concreta) si dice \textit{realizzazione} e viene rappresentata da una linea tratteggiata con la punta chiusa e vuota che parte dalla classe e punta all'interfaccia.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{assets/UML/class/class-9.png}
     \caption{Esempio di utilizzo della notazione \textit{lollipop} (classe fornisce interfaccia) e notazione \textit{socket} (classe richiede interfaccia)}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-10.png}
     \caption{I class diagram prevedono \textbf{dipendenze}, relazioni unidirezionali tra una classe \textit{client} (da cui parte la freccia) ad una classe \textit{supplier} (in cui punta la freccia). Una qualsiasi modifica alla classe supplier ha effetto sulla classe client (non viceversa), in più NON gode di proprietà transitiva. È inoltre possibile definire dipendenze \textit{custom} (personalizzate)}.
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-5.png}
     \caption{Esempio di utilizzo del concetto di dipendenza}
@@ -110,7 +110,7 @@ La relazione che lega interfaccia e classe (astratta o concreta) si dice \textit
 
 I class diagram consentono l'uso di interfacce e classi \textbf{parametriche}: nel codice, i campi e i parametri/risultati dei metodi sono di tipo generico (sussiste a tempo di compilazione, es. Java) o \textit{template} (sussiste a runtime, es C++).
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-11.png}
     \caption{Esempio di \textbf{derivazione}: classe discendente da una classe parametrica che sostituisce il tipo generico con uno concreto tramite \textit{bind}}
@@ -124,7 +124,7 @@ Una classe \textit{attiva} è una classe che esegue e controlla autonomamente il
 
 \paragraph{Aggregazione} È una forma di associazione in cui l'oggetto destinazione è un \textit{componente} della classe sorgente, il quale viene \textit{aggregato}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-6.png}
     \caption{Esempio di aggregazione}
@@ -132,7 +132,7 @@ Una classe \textit{attiva} è una classe che esegue e controlla autonomamente il
 
 \paragraph{Composizione} È una forma di aggregazione in cui l'oggetto sorgente è composto da un insieme di oggetti del tipo destinazione.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-7.png}
     \caption{Esempio di composizione}
@@ -143,7 +143,7 @@ Le differenze tra composizione e aggregazione sono le seguenti:
     \item Nella \textit{composizione}, l'istanza composta è responsabile dell'esistenza (creazione, modifica e cancellazione) delle istanze componenti, se viene distrutta anche i suoi componenti vengono distrutti; nell'\textit{aggregazione} l'oggetto componente esiste in maniera indipendente dall'aggregato.
 \end{itemize}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-12.png}
     \caption{Esempio di \textbf{associazione qualificata} in cui l'oggetto Ordine possiede più oggetti di tipo LineaOrdine, ma al più uno per ogni oggetto Prodotto (detto \textit{qualificatore}, una sorta di chiave). Implementata tramite array associativi quali mappe, tabelle hash, dizionari, ecc...}
@@ -151,7 +151,7 @@ Le differenze tra composizione e aggregazione sono le seguenti:
 
 \vspace{20pt}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-13.png}
     \caption{Esempio di \textbf{classe associativa}: garantisce che per ogni coppia di oggetti associati esista una sola istanza della classe associativa.}
@@ -159,7 +159,7 @@ Le differenze tra composizione e aggregazione sono le seguenti:
 
 \vspace{20pt}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-14.png}
     \caption{Esempio di \textbf{associazione riflessiva}: classe sorgente e classe destinazione coincidono, ogni istanza della classe possiede proprietà del suo stesso tipo}
@@ -167,7 +167,7 @@ Le differenze tra composizione e aggregazione sono le seguenti:
 
 \vspace{20pt}
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/UML/class/class-15.png}
     \caption{Concetto di \textbf{non navigabilità}}
