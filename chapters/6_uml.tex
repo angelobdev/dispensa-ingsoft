@@ -1,0 +1,45 @@
+\chapter{Unified Modeling Language}
+
+Per \textit{Unified Modeling Language} (UML) si intende una famiglia di notazioni grafiche atte a supportare la descrizione e il progetto di sistemi software (POO in particolare). Si tratta di uno standard relativamente aperto, nato dalla fusione di alcuni linguaggi grafici e di modellazione diffusi negli anni '80-'90. È stato riconosciuto dal \textit{Object Management Group} nel 1997, e nuove versioni sono state rilasciate fino al 2017, sebbene l'ultimo aggiornamento più consistente (UML 2.0) risalga al 2005 (anno in cui venne riconosciuto standard ISO).
+
+\section{Prospettive}
+
+Vengono distinte due prospettive di utilizzo.
+
+\paragraph{Prospettiva software} Modellazione della struttura e del funzionamento del sistema (associazione elemento $\Leftrightarrow$ componente del programma).
+
+\paragraph{Prospettiva concettuale} Modellazione del dominio d'interesse in cui il sistema agisce (associazione elemento $\Leftrightarrow$ concetto del contesto applicativo).
+\\
+\\
+Analogamente, i diagrammi possono offrire due diverse prospettive sul sistema.
+
+\paragraph{Vista statica} Studia i legami tra componenti software che sussistono a tempo di compilazione (dipendono da definizione e struttura del sistema) e non cambiano a \textit{runtime}.
+
+\paragraph{Vista dinamica} Studia i legami tra componenti software che non esistono a tempo di compilazione, bensì nascono ed evolvono a \textit{runtime} (dipendono dal funzionamento del sistema).
+
+\section{Utilizzo nel processo di sviluppo}
+
+\paragraph{Analisi dei requisiti} Si fa uso di modelli informali (comprensibili a cliente/committente) per modellare gli aspetti più importanti del progetto e le interazioni fra sistema ed entità del contesto applicativo. Si adottano prospettive concettuale e software. È possibile abbozzare per la costruzione (\textit{forward engineering}) o la comprensione (\textit{reverse engineering}) di un sistema.
+
+\paragraph{Progettazione} Si esprimono le decisioni progettuali in maniera dettagliata così da fornire ai programmatori un modello (spesso di interfaccia) da implementare. Si segue la prospettiva software, si possono produrre tramite strumenti di \textit{CASE} (o \textit{Computer Aided Software Engineering}). 
+
+\paragraph{Codifica} A seconda del grado di progettazione, la programmazione diviene un'attività più o meno meccanica. Nel caso in cui sia massimo, il software si riduce a mera "traduzione diretta" dei modelli di progetto (alcuni CASE prevedono generazione automatica di codice).
+
+\paragraph{Produzione di documentazione} Modelli concettuali o software possono essere impiegati per fornire una rappresentazione generale del sistema, descrivere gli scenari di funzionamento, evidenziare le caratteristiche e le relazioni più importanti di ogni componente (più o meno complesso).
+
+\section{Diagrammi}
+
+Lo standard UML (dalla versione 2.0) si basa su tre diagrammi ufficiali, per ognuno di essi sono stati definiti degli elementi tipici, pur lasciando la sintassi informale (si possono usare elementi appartenenti ad un diagramma in un altro). Tutti i diagrammi consentono l'inserimento di \textit{note} che permettono di specificare struttura, funzionamento o scopo di alcuni elementi. La notazione più diffusa prevede che sia scritta all'interno di un \textit{box-cartella} collegato da una linea tratteggiata all'elemento annotato.
+
+\input{chapters/UML/activity}
+\input{chapters/UML/class}
+\input{chapters/UML/communication}
+\input{chapters/UML/component}
+\input{chapters/UML/deployment}
+\input{chapters/UML/object}
+\input{chapters/UML/package}
+\input{chapters/UML/sequence}
+\input{chapters/UML/state}
+\input{chapters/UML/struct_comp}
+\input{chapters/UML/usecase}
+

@@ -1,0 +1,139 @@
+\chapter{Intro e concetti di base}
+
+Gli obiettivi dell'ingegneria del software sono:
+\begin{enumerate}
+    \item Conoscere natura e qualità del software
+    \item Saper rappresentare graficamente le fasi di sviluppo di progetto software
+    \item Saper analizzare una soluzione progettuale (forza e debolezza)
+    \item Sapersi muovere tra:
+    \begin{itemize}
+        \item Progettazione
+        \item Implementazione
+        \item Testing
+        \item Manutenzione
+    \end{itemize}
+    \item Conoscenza delle metodologie di progettazione e sviluppo
+\end{enumerate}
+
+L'Ingegneria del Software si occupa di creare \textbf{sistemi software complessi} per cui è richiesto il lavoro di uno o più team.
+
+Questi sistemi restano in *vita* per diversi anni e subiscono modifiche allo scopo di:
+\begin{enumerate}
+    \item Eliminare difetti
+    \item Migliorare caratteristiche
+    \item Introdurre nuove funzionalità
+    \item Rimuovere caratteristiche obsolete
+\end{enumerate}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|}
+        \textbf{Programmazione} & \textbf{Ingegneria del Software} \\
+        Scrittura di un programma completo & Progettazione e sviluppo di componenti che dovranno interagire tra loro (scritti anche da altri) \\
+        Attività individuale & Attività di gruppo \\
+    \end{tabularx}
+    \caption{Definizione di Parnas}
+\end{table}
+
+\newpage
+
+L'\textit{ingegnere del software} deve:
+\begin{itemize}
+    \item Saper programmare in uno o più linguaggi
+    \item Avere familiarità con più approcci di progettazione
+    \item Saper tradurre richieste vaghe in specifiche precise
+    \item Sapere interagire con l'utente
+    \item Districarsi attraverso diversi livelli di astrazione progettuale
+    \item Saper costruire modelli e ragionarci al fine di scegliere un buon compromesso (\textit{trade-off})
+    \item Saper operare all'interno di un team
+\end{itemize}
+
+\section{Ciclo di vita del software}
+Costituito da diverse fasi (aventi come output un artefatto da trasmettere alla fase successiva) atte a sviluppare, implementare e consegnare un prodotto più affine possibile alle richieste del cliente.
+
+\paragraph{Ciclo a cascata (Modello waterfall)}
+
+\begin{enumerate}
+    \item \textbf{Analisi e specifica dei requisiti}
+    \begin{itemize}
+        \item Definizione di costi e benefici della realizzazione del software
+        \item Identificazione dei requisiti del sistema (espressi in una notazione formale comprensibile dal cliente)
+        \item Attori: Cliente, Analisti di mercato, team di sviluppo
+    \end{itemize}
+    \item \textbf{Progettazione e specifica di sistema}, suddivisa in:
+    \begin{itemize}
+        \item \textit{Progettazione architetturale}: organizzazione del sistema in termini di componenti (di alto livello) e loro interazioni
+        \item \textit{Progettazione di dettaglio}: scomposizione delle componenti in modulo di basso livello accuratamente definito
+        \item Output: documento di specifica
+    \end{itemize}
+    \item \textbf{Codifica e test di modulo}
+    \begin{itemize}
+        \item Implementazione del sistema funzionante (composto da componenti progettati nelle fasi precedenti)
+        \item Produzione di codice di test e successiva fase di test dei moduli
+    \end{itemize}
+    \item \textbf{Integrazione e test di sistema}: Integrazione e test dei moduli precedentemente sviluppati
+    \item \textbf{Consegna e manutenzione}: Consegna al cliente e successiva fase di \textit{manutenzione} (raccolta di modifiche apportate al sistema dopo la sua consegna)
+\end{enumerate}
+
+\section{Natura e Qualità del software}
+
+\subsection{Natura del software}
+
+Prodotto dell'ingegneria del software: \textit{sistema software}
+\\
+Distinto poiché \textit{duttile}: può essere direttamente modificato senza riconsiderare il progetto (rischioso).
+\\
+Il costo del software è determinato da:
+\begin{itemize}
+    \item Progettazione
+    \item Implementazione
+    \item Manutenzione
+\end{itemize}
+
+\subsection{Qualità del software}
+
+\textbf{Esterne}: visibili agli utenti del sistema.\\
+\textbf{Interne}: visibili agli sviluppatori, importanti per il conseguimento delle esterne.
+
+\begin{center}
+  $\ast$~$\ast$~$\ast$
+\end{center}
+
+\paragraph{Correttezza} Un sistema software è \textit{corretto} soddisfa i requisiti (funzionali e non funzionali), espressi in maniera non ambigua. Valutabile tramite: testing e/o approcci analitici.
+
+\paragraph{Affidabilità} Un sistema software è \textit{affidabile} se opera come previsto. Definita come \textit{probabilità che il sistema si comporti come attesa per un certo intervallo di tempo}. Affidabilità implica correttezza (ma non il contrario).
+
+\paragraph{Robustezza} Un sistema software è \textit{robusto} se si comporta "bene" anche in casi non previsti dalle specifiche.
+
+\paragraph{Prestazioni} Il livello di \textit{prestazioni} varia in base a: efficienza, risorse utilizzate, altro. È valutato tramite: misura, analisi di complessità e simulazione. Nel caso del processo di sviluppo prende il nome di \textbf{produttività}.
+
+\paragraph{Usabilità} Un software è detto \textit{usabile} se è \textbf{user-friendly}. Dipende dall'implementazione dell'interfaccia.
+
+\paragraph{Verificabilità} Un sistema software è \textit{verificabile} se è possibile verificarne correttezza e prestazioni. Può essere qualità esterna per sistemi critici. Svolta tramite analisi formale e testing o moduli di monitoraggio. Dipende da progettazione e linguaggi di programmazione.
+
+\paragraph{Manutenibilità} Un sistema software è \textit{manutenibile} se è possibile: eliminare difetti, migliorare il funzionamento, introdurre nuove funzioni. È la qualità più costosa. Divisa in:
+\begin{itemize}
+    \item \textit{Adattiva}: modifiche richieste dall'ambiente esterno
+    \item \textit{Correttiva}: eliminazione di errori
+    \item \textit{Perfettiva}: interventi migliorativi o nuove funzioni
+\end{itemize}
+
+\paragraph{Riparabilità} Un sistema software è \textit{riparabile} se è possibile correggere difetti con quantità ragionevoli di lavoro. Dipende dalla modularità del software.
+
+\paragraph{Evolvibilità} Un sistema software è \textit{evolvibile} se è capace di sostenere modifiche evolutive in maniera controllata e ordinata. Dipende dalle fasi di progettazione. È una qualità che si degrada all'aumentare delle iterazioni (modifiche).
+
+\paragraph{Riusabilità} Un sistema software \textit{riusabile} se è possibile utilizzarne (una o più) parti per dare origine ad un altro prodotto (es. librerie), è un obiettivo della POO e si applica anche alle fasi di progettazione.
+
+\paragraph{Portabilità} Un sistema software è \textit{portabile} se è possibile eseguirlo in ambienti (hardware o S.O.) diversi. È favorita dall'uso di linguaggi interpretati (es. Python, Java).
+
+\paragraph{Comprensibilità} Un sistema software è \textit{comprensibile} in base alla complessità di progettazione e implementazione. Qualità che aiuta evolvibilità e verificabilità.
+
+\paragraph{Interoperabilità} Un sistema software è \textit{interoperabile} se è capace di coesistere e/o cooperare con altri sistemi. Si raggiunge tramite l'uso di interfacce standard (es. plugin browser). Importante nei sistemi open-source.
+
+\paragraph{Produttività} Un sistema software è più (o meno) \textit{produttivo} in base ad efficienza e prestazioni del processo di produzione. Influenzata dalla riusabilità.
+
+\paragraph{Tempestività} Un sistema software è \textit{tempestivo} se è consegnato nei tempi previsti. Non è sempre una qualità. Un sistema software più completo consegnato in ritardo è meglio di un sistema incompleto consegnato in tempo. La consegna incrementale è una buona soluzione.
+
+\paragraph{Visibilità} Un processo di sviluppo è \textit{visibile} se tutti i passi e lo stato corrente sono correttamente documentati. È fondamentale per valutare: azioni progettuali, variazioni del personale.
+
+\newpage
