@@ -20,7 +20,6 @@
     \includegraphics[width=1\linewidth]{assets/pattern/abstract-factory/abstract-factory-struttura.png}
 \end{figure}
 
-
 \paragraph{Struttura e Conseguenze} I partecipanti del pattern sono:
 \begin{itemize}
     \item \textbf{AbstractFactory} (WidgetFactory): dichiara un’interfaccia per le operazioni di creazione di oggetti prodotto astratti.
@@ -34,5 +33,11 @@ Il pattern AbstractFactory consente quindi di isolare le classi concrete (proces
 È bene notare che l'aggiunta del supporto a nuove tipologie di prodotti è difficile in quanto comporta la modifica dell'interfaccia AbstractFactory e, di conseguenza, di tutte le classi che la implementano.
 
 In più è possibile implementare il Factory come Singleton (\ref{singleton})
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/pattern/abstract-factory/abstract-factory-activity.drawio.png}
+    \caption{Activity Diagram di AbstractFactory}
+\end{figure}
 
 \newpage
