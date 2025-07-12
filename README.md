@@ -12,7 +12,7 @@ Per scaricare il file PDF compilato vai alla sezione [Release](https://github.co
 
 1. [TexLive Manager](https://www.tug.org/texlive/tlmgr.html)
 2. Librerie di compilazione: [latexmk](https://mgeier.github.io/latexmk.html)
-3. Librerie progetto: tocbibind, titlesec
+3. Librerie progetto: tocbibind, titlesec, minted
 4. [PDFLatex](https://www.tug.org/applications/pdftex/)
 
 **Nota:**  

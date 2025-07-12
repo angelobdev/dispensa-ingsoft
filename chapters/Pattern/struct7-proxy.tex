@@ -1,15 +1,61 @@
 \subsection{Proxy}
 
+\textbf{Scopo}: Strutturale \\
+\textbf{Raggio d'azione}: Oggetti
 
-\textbf{Scopo}:  \\
-\textbf{Raggio d'azione}: 
+\paragraph{Definizione} Fornisce un surrogato o segnaposto di un altro oggetto per controllare l'accesso a tale oggetto.
 
-\paragraph{Definizione}
+\paragraph{Problema} Si consideri un editor che consente di rappresentare anche immagini all’interno dei documenti. Per velocizzare il caricamento in memoria dei documenti può essere opportuno ritardare il caricamento delle immagini fino a quando non è necessario visualizzarle.
 
-\paragraph{Problema}
+\paragraph{Soluzione} Utilizzare un oggetto surrogato dell’immagine, ad esempio che occupi lo stesso spazio
 
-\paragraph{Soluzione} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/pattern/proxy/proxy-esempio.png}
+    \caption{Esempio di utilizzo del pattern}
+\end{figure}
 
-\paragraph{Struttura e Conseguenze} 
+\paragraph{Struttura e Conseguenze} Il pattern è composto da:
+\begin{itemize}
+    \item \textbf{Proxy} (ImageProxy): mantiene un riferimento all'oggetto di tipo RealSubject (di cui è \textit{surrogato}). Ha la stessa interfaccia di Subject. Controlla l'accesso all'oggetto rappresentato e può essere responsabile della sua creazione o eliminazione;
+    \item \textbf{Subject} (Graphic): definisce l'interfaccia comune per RealSubject e Proxy consentendo di usare Proxy ove ci si attende un RealSubject
+    \item \textbf{RealSubject} (Image): definisce l'oggetto reale rappresentato dal proxy;
+\end{itemize}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/pattern/proxy/proxy-struttura.png}
+    \caption{Struttura del pattern}
+\end{figure}
+
+\textbf{Esempio Java}
+\begin{minted}[
+    fontsize=\footnotesize,
+    linenos,
+]{java}
+// Proxy implements Subject
+public class ListaSicura<E> implements Lista<E> {
+
+    private Lista<E> lista;
+    private PermessiUtente pu; // RealSubject
+
+    public ListaSicura(Lista<E> l, int nread, int nwrite) {
+        lista = l;
+        pu = new PermessiUtente(nread, nwrite);
+    }
+
+    @Override
+    public void aggiungi(int index, E dato) throws IndexOutOfBoundsException {
+        if(pu.getNumeroScritture() == 0) {
+            throw new AccessoNonConsentitoException
+        }
+        pu.decrementaScritture();
+        lista.aggiungi(index, dato);
+    }
+
+}
+\end{minted}
+
 
 \newpage
