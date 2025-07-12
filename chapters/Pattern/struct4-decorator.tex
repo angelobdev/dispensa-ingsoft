@@ -36,6 +36,14 @@ Nell'esempio l'interfaccia VisualComponent definisce il tipo generico di compone
     \caption{Struttura del pattern Decorator}
 \end{figure}
 
+\begin{itemize}
+    \item Maggiore flessibilità rispetto all'ereditarietà;
+    \item Differenti combinazioni di oggetti attraverso l'utilizzo di diversi decoratori;
+    \item L'uso nei progetti porta a sistemi composti di molti oggetti simili interconnessi, facile da interpretare dal progettista, meno da esterni;
+    \item Decoratore e oggetto decorato sono uguali in termini di comportamento ma differiscono in termini di identità
+    \item Bisogna porre attenzione in come si compongono i decoratori, per esempio evitare dipendenze circolari.
+\end{itemize}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/pattern/decorator/decorator-activity.drawio.png}
