@@ -37,10 +37,18 @@ Si può fare ricorso all’ereditarietà rendendo Window una classe astratta (o 
     \item \textbf{ConcreteImplementor}: definisce un’implementazione concreta dell’interfaccia Implementor.
 \end{itemize}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/pattern/bridge/bridge-activity.drawio.png}
+    \caption{Activity Diagram del pattern Bridge}
+\end{figure}
+
 L'utilizzo del pattern permette quindi maggiore \textbf{disaccoppiamento} tra interfaccia ed implementazione, maggiore \textbf{estensibilità} e mascheramento dei dettagli implementativi al client.
 
 È possibile utilizzare Abstract Factory (\ref{abstract-factory}) per creare e configurare un particolare Bridge.
 
 Il pattern Adapter (\ref{adapter}) permette di far cooperare classi non correlate a valle della loro implementazione.
+
+
 
 \newpage
