@@ -1,5 +1,60 @@
 \chapter{Design Pattern}
 
+\section{Introduzione}
+
+Un \textbf{Design Pattern} è una soluzione pronta all’uso o preliminarmente adattabile per specifici problemi applicativi. I Design Pattern affrontano questioni rilevanti come la riusabilità, la modificabilità, l’estendibilità e il disaccoppiamento dei moduli software. La loro conoscenza offre un linguaggio comune (sintassi e semantica) per facilitare la comunicazione all’interno dei team di progetto.
+
+I Design Pattern si classificano in tre categorie principali:
+\begin{itemize}
+    \item \textbf{Creazionali}: si occupano della creazione degli oggetti.
+    \item \textbf{Strutturali}: descrivono come comporre classi e oggetti.
+    \item \textbf{Comportamentali}: si concentrano sulle interazioni tra oggetti e algoritmi.
+\end{itemize}
+
+Questa classificazione, sebbene ampiamente accettata, non è universalmente condivisa. Ad esempio, il pattern \textit{State} appartiene alla categoria comportamentale. I Design Pattern possono essere rappresentati tramite diagrammi UML che coinvolgono classi, interfacce, oggetti e le loro relazioni.
+
+I \textbf{23 Design Pattern di riferimento} sono descritti nel libro \textit{Design Patterns: Elements of Reusable Object-Oriented Software} (Gang of Four: E. Gamma, R. Helm, R. Johnson, J. Vlissides, 1995). Tuttavia, nuovi pattern continuano a essere scoperti e documentati.
+
+\subsection{Benefici dei Design Pattern}
+L’uso dei Design Pattern facilita il riuso efficace di progetti e architetture, rendendo accessibili agli sviluppatori tecniche consolidate. Aiutano a scegliere tra alternative progettuali che migliorano la riusabilità del sistema e a scartare quelle che la comprometterebbero.
+
+I Design Pattern rispondono a esigenze quali:
+\begin{itemize}
+    \item Isolare e incapsulare gli aspetti che cambiano in un progetto.
+    \item Applicare il principio \textbf{Open/Closed}: apertura ai cambiamenti tramite l’aggiunta di nuovi moduli, mantenendo invariati gli altri.
+    \item Migliorare la documentazione e la manutenzione dei sistemi esistenti.
+\end{itemize}
+
+\subsection{Struttura di un Design Pattern}
+Ogni Design Pattern è caratterizzato da quattro elementi essenziali:
+\begin{itemize}
+    \item \textbf{Nome}: descrive sinteticamente il problema di progettazione, la soluzione e le conseguenze della soluzione scelta.
+    \item \textbf{Problema (o intento)}: spiega il contesto e il problema che il pattern risolve.
+    \item \textbf{Soluzione (concettuale)}: descrive gli elementi del progetto, le loro relazioni e collaborazioni. Non fornisce un’implementazione, ma una configurazione astratta.
+    \item \textbf{Conseguenze}: descrivono i risultati e i vincoli derivanti dall’applicazione del pattern, aiutando a valutare soluzioni alternative e stimare costi e benefici.
+\end{itemize}
+
+\subsection{Origini dei Design Pattern}
+Il concetto di pattern è stato introdotto da \textbf{Christopher Alexander} nel suo libro \textit{A Pattern Language: Towns, Buildings, Constructions} (Oxford University Press, 1977). Alexander descrisse circa 250 pattern per la progettazione architettonica di case e città, fornendo per ciascuno un nome, un contesto d’uso, il problema da risolvere e la soluzione proposta.
+
+Un esempio di pattern architettonico è il \textit{Corridoio corto}, che suggerisce di evitare corridoi più lunghi di 16-17 metri per ridurre il disagio causato dalla loro oscurità e desolazione. La soluzione consiste nel progettare corridoi corti con ampie vetrate e rientranze arredate.
+
+\subsection{Classificazione dei Design Pattern}
+I Design Pattern possono essere classificati secondo due criteri:
+\begin{itemize}
+    \item \textbf{Scopo}: indica ciò che il pattern fa (Creazionali, Strutturali, Comportamentali).
+    \item \textbf{Raggio d’azione}: distingue tra pattern che riguardano le relazioni statiche tra classi (\textit{Class-pattern}) e quelli che riguardano le relazioni dinamiche tra oggetti (\textit{Object-pattern}).
+\end{itemize}
+
+La maggior parte dei Design Pattern ha gli oggetti come raggio d’azione, ma alcuni si concentrano sulle classi. Ad esempio:
+\begin{itemize}
+    \item \textbf{Pattern Creazionali}: delegano parte del processo di creazione di un oggetto alle sottoclassi o ad altri oggetti.
+    \item \textbf{Pattern Strutturali}: utilizzano l’ereditarietà per comporre classi o descrivono modi per raggruppare oggetti.
+    \item \textbf{Pattern Comportamentali}: descrivono algoritmi e flussi di controllo o il modo in cui gruppi di oggetti cooperano per svolgere attività complesse.
+\end{itemize}
+
+\newpage
+
 \section{Comportamentali}
 
 \input{chapters/Pattern/comportamentali/chain-of-responsibility.tex}
