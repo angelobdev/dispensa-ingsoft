@@ -1,15 +1,35 @@
-\subsection{Facade}
+\subsection{Façade}
 \label{facade}
 
-\textbf{Scopo}:  \\
-\textbf{Raggio d'azione}: 
+\textbf{Scopo}: Strutturale \\
+\textbf{Raggio d'azione}: Oggetti
 
-\paragraph{Definizione}
+\paragraph{Definizione} Il pattern Façade fornisce un'interfaccia unificata per un insieme di interfacce presenti in un sottosistema. Definisce un'interfaccia di livello più alto che rende il sistema più semplice da utilizzare.
 
-\paragraph{Problema}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/pattern/facade/facade-struttura.png}
+    \caption{Struttura del pattern Façade}
+\end{figure}
 
-\paragraph{Soluzione} 
+\paragraph{Struttura e Conseguenze} Il pattern Façade è composto da:
+\begin{itemize}
+    \item \textbf{Façade} (MessageCreator): conosce le classi nel sottosistema che sono responsabili di gestire una richiesta. 
+    \item \textbf{Classi del sottosistema} (Message,MessageBody, Attachment, etc.): Implementano le funzionalità del sottosistema. Non hanno alcuna conoscenza dell’esistenza del Façade: non hanno alcun riferimento ad esso.
+\end{itemize}
 
-\paragraph{Struttura e Conseguenze} 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/pattern/facade/facade-problema.png}
+    \caption{Problema: creazione di un messaggio e-mail}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/pattern/facade/facade-soluzione.png}
+    \caption{Soluzione con pattern Façade}
+\end{figure}
+
+Il pattern permette quindi di nascondere ai client i componenti del sottosistema, riducendo il numero degli oggetti con cui i client interagiscono. Promuove il \textbf{basso accoppiamento} tra sottosistema e client, e \textbf{alta coesione} interna. Riduce le dipendenze di compilazione e non impedisce l'utilizzo delle classi del sottosistema qualora fosse necessario.
 
 \newpage
