@@ -4,7 +4,7 @@ Progetto LaTeX che comprende una serie di concetti di Ingegneria del Software, U
 
 ## Download
 
-Per scaricare il file PDF compilato scegli la versione che preferisci nella sezione [release](https://github.com/angelobdev/dispensa-ingsoft/releases/) oppure [clicca qui](https://github.com/angelobdev/dispensa-ingsoft/releases/download/v2.0/IngSoft-v2.0)
+Per scaricare il file PDF compilato scegli la versione che preferisci nella sezione [release](https://github.com/angelobdev/dispensa-ingsoft/releases/) oppure [clicca qui](https://github.com/angelobdev/dispensa-ingsoft/releases/download/v2.0/IngSoft-v2.0.pdf)
 
 ## Guida di compilazione (VSCode)
 
