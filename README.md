@@ -1,12 +1,12 @@
 # Ingegneria del Software
 
-Progetto LaTeX che comprende una serie di concetti di Ingegneria del Software e UML.
+Progetto LaTeX che comprende una serie di concetti di Ingegneria del Software, UML e Design Pattern.
 
 ## Download
 
 Per scaricare il file PDF compilato scegli la versione che preferisci nella sezione [release](https://github.com/angelobdev/dispensa-ingsoft/releases/) oppure [clicca qui](https://github.com/angelobdev/dispensa-ingsoft/releases/download/v2.0/IngSoft-v2.0)
 
-## Guida di compilazione
+## Guida di compilazione (VSCode)
 
 ### Prerequisiti
 
@@ -32,9 +32,5 @@ Su macOS puoi installarli tramite [Homebrew](https://brew.sh/)
 ### Compilazione
 
 1. Installa l'estensione [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)
-2. Apri [main.tex](./main.tex) e clicca play in alto a destra
+2. Apri [main.tex](./main.tex) e clicca play (▶︎) in alto a destra
 3. Visualizza il PDF cliccando l'icona affianco
-
-## Collaborazione
-
-Per collaborare sentiti libero di forkare la repository, effettuare le modifiche necessarie e fare una pull request in cui descrivi cosa è stato fatto.
