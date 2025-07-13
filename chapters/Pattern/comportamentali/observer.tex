@@ -9,6 +9,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/pattern/observer/observer-struttura.png}
+    \caption{Class Diagram del pattern Observer}
 \end{figure}
 
 \paragraph{Struttura} Il pattern è composto da:
@@ -23,6 +24,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\linewidth]{assets/pattern/observer/observer-sequence.png}
+    \caption{Sequence Diagram del pattern Observer}
 \end{figure}
 
 \paragraph{Interazioni} ConcreteSubject notifica i propri Observer quando avviene un cambiamento che potrebbe rendere il loro stato non inconsistente rispetto al proprio. Dopo essere stato informato di un cambiamento nel ConcreteSubject, un osservatore concreto può chiedere al Subject informazioni sul suo stato. ConcreteObserver usa questa informazione per riconciliare il suo stato con quello del subject.
