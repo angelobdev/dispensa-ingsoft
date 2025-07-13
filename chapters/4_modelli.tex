@@ -181,6 +181,12 @@ Durante uno sprint le comunicazioni da e verso l'esterno sono mediate dallo \tex
 
 \paragraph{Scaling Out} È possibile introdurre metodi e tecniche agili in aziende di grosse dimensioni e con alle spalle una diversa tradizione di sviluppo software?
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{assets/large-software.png}
+    \label{fig:large-software}
+\end{figure}
+
 \paragraph{Criticità} Le metodologie agili presentano le seguenti criticità:
 \begin{enumerate}
     \item L'\textbf{informalità} le rende poco compatibili con approcci legali (comuni in grandi aziende che hanno ad esempio enti pubblici come committenti).
@@ -191,19 +197,14 @@ Durante uno sprint le comunicazioni da e verso l'esterno sono mediate dallo \tex
     \item La \textbf{coordinazione tra team} risulta difficoltosa poiché i grandi sistemi sono spesso sviluppati come \textbf{progetti separati}.
 \end{enumerate}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{assets/large-software.png}
-    \label{fig:large-software}
-\end{figure}
-
-\newpage
 Adattare le metodologie agili allo sviluppo di sistemi di grandi dimensioni è molto difficoltoso. La soluzione sta nell'adottare un compromesso tra metodologie tradizioni (pianificate) e metodologie agili, scegliendo quando aderire ad una piuttosto che all'altra sulla base di:
 \begin{itemize}
     \item \textbf{Tipologia del software}: dimensioni, grado di progettazione/documentazione richiesto, tempo di vita, eventuali regolamentazioni esterne;
     \item \textbf{Caratteristiche del team} di sviluppo: competenze, distribuzione del personale, tecnologie adottate, ecc...
     \item \textbf{Tradizione dell'organizzazione}: esigenze contrattuali, pratiche di business/marketing, esperienze passate e standard aziendali.
 \end{itemize}
+
+\newpage
 
 \section{Design by Contract}
 
@@ -242,16 +243,17 @@ Date \textit{$P_1$} e \textit{$P_2$}, $P_1$ è più forte di $P_2$ se $P_1 \Righ
 \end{itemize}
 
 \paragraph{Linguaggio Eiffel} Implementa il DBC tramite notazione esplicita quale:
-\begin{verbatim}
+\begin{minted}[
+    fontsize=\footnotesize,
+    linenos,
+]{eiffel}
     require P
     A
     require Q
-\end{verbatim}
+\end{minted}
 Ogni esecuzione di $A$ richiede che $P$ sia soddisfatta prima dell'esecuzione e che $Q$ sia soddisfatta al termine dell'operazione. Le condizioni si verificano tramite \textbf{asserzioni}, se queste non sono verificate allora si dice che l'operazione viene eseguita \textbf{al di fuori del contratto} (senza garanzie). In tal caso vengono sollevate \textbf{eccezioni}, la loro gestione (\textit{exception handling}) riguarda la robustezza.
 
 \paragraph{Invariante di classe} condizione logica che stabilisce quali sono gli stati ammissibili per gli oggetti istanze di una classe (non durante l'esecuzione di un metodo). Si basa soltanto sullo stato dell'oggetto, ad esempio: \textit{avendo una classe che rappresenta un triangolo, l'invariante sarebbe che i tre punti che lo compongono non siano allineati nel piano cartesiano}.
-
-\newpage
 
 \textbf{Formalmente}:\\
 Data una classe $C$, un'invariante $inv$ è corretta se per ogni costruttore $c$ con argomenti $arg_c$ si ha che:

@@ -2,6 +2,8 @@
 
 Progetto LaTeX che comprende una serie di concetti di Ingegneria del Software, UML e Design Pattern.
 
+Per sapere se l'argomento che cerchi è presente in questa dipensa [guarda il programma](./PROGRAMMA.md)
+
 ## Download
 
 Per scaricare il file PDF compilato scegli la versione che preferisci nella sezione [release](https://github.com/angelobdev/dispensa-ingsoft/releases/) oppure [clicca qui](https://github.com/angelobdev/dispensa-ingsoft/releases/download/v2.0/IngSoft-v2.0.pdf)

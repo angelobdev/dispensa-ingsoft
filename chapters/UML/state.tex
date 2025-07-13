@@ -17,14 +17,13 @@ Nell'approccio object-oriented un automa a stati finiti è associato a una class
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{assets/UML/state/state1.png}
+    \includegraphics[width=0.8\linewidth]{assets/UML/state/state1.png}
+    \caption{I due formalismi sono equivalenti: è sempre possibile trasformare un automa di Mealy in un automa di Moore e viceversa (il numero di stati potrebbe essere diverso)}
 \end{figure}
-
-I due formalismi sono equivalenti: è sempre possibile trasformare un automa di Mealy in un automa di Moore e viceversa (il numero di stati potrebbe essere diverso).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{assets/UML/state/state2.png}
+    \includegraphics[width=1\linewidth]{assets/UML/state/state2.png}
     \caption{Esempio di automa: forno}
 \end{figure}
 
@@ -54,13 +53,15 @@ Gli state chart consentono di modellare delle gerarchie annidando gli stati di c
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{assets/UML/state/state4.png}
+    \includegraphics[width=1\linewidth]{assets/UML/state/state4.png}
     \caption{Esempio di state chart: controller di un treno}
 \end{figure}
 
 Per ogni stato non foglia una pseudo-transizione indica qual è il sottostato iniziale. Si definisce "configurazione" dell'automa il percorso che va dallo stato di più alto livello gerarchico fino allo stato foglia attuale. Nell'esempio, la configurazione iniziale dell'automa è la seguente:
 
 $$ControllerTop.NessunTreno.Opened$$
+
+\newpage
 
 \paragraph{OR-decomposition} Lo stato foglia attuale è sufficiente a definire univocamente la configurazione corrente dell'automa. Questo perché si applica il \textbf{principio dell'OR esclusivo} (XOR): in ogni stato NON foglia, l'automa deve trovarsi in uno e uno solo dei possibili sottostati.
 
@@ -71,6 +72,12 @@ Un \textbf{connettore di storia} è un elemento posto all'interno di uno stato d
     \item \textbf{Storia superficiale (H)}: memorizza la configurazione dallo stato di livello gerarchico più alto fino al livello dei sottostati dello stato con il connettore;
     \item \textbf{Storia profonda (H*)}: memorizza la configurazione dallo stato di livello gerarchico più alto fino allo stato foglia corrente, dunque scendendo in profondità oltre i sottostati dello stato contenente il connettore.
 \end{itemize}
+
+In generale, i connettori di storia dovrebbero avere anche una transizione uscente verso un sottostato del macrostato in cui sono contenuti, in modo da poter essere attivati quando l'automa si trova in quello stato. In sua assenza e in assenza di memoria si raggiunge lo stato di default.
+
+Sfruttando il principio di modularità, è possibile definire la gerarchia di uno solo dei possibili stati di controllo, astraendo dai dettagli interni degli altri stati. La presenza di stati non ancora definiti che sono punto di partenza/arrivo di transizioni è segnalata con un cosiddetto \textbf{state stub}.
+
+\newpage
 
 \begin{figure}[H]
     \centering
@@ -90,9 +97,7 @@ Un \textbf{connettore di storia} è un elemento posto all'interno di uno stato d
     \caption{Esempio di stato ispezione}
 \end{figure}
 
-In generale, i connettori di storia dovrebbero avere anche una transizione uscente verso un sottostato del macrostato in cui sono contenuti, in modo da poter essere attivati quando l'automa si trova in quello stato. In sua assenza e in assenza di memoria si raggiunge lo stato di default.
-
-Sfruttando il principio di modularità, è possibile definire la gerarchia di uno solo dei possibili stati di controllo, astraendo dai dettagli interni degli altri stati. La presenza di stati non ancora definiti che sono punto di partenza/arrivo di transizioni è segnalata con un cosiddetto \textbf{state stub}.
+\newpage
 
 \paragraph{Nota} Per via del concetto di configurazione, in una transizione di stato è necessario individuare:
 
@@ -117,11 +122,13 @@ Ancora, il trigger della transizione potrebbe essere un \textit{evento di tempo}
 
 $$after\ time\_expression$$
 
+\newpage
+
 \paragraph{AND-decomposition} Lo stato foglia attuale NON è sufficiente a definire univocamente la condizione corrente dell'automa. In ogni stato NON foglia, l'automa può trovarsi contemporaneamente in due o più possibili sottostati. Lo stato viene diviso in \textit{regioni} parallele e concorrenti.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{assets/UML/state/state8.png}
+    \includegraphics[width=0.7\linewidth]{assets/UML/state/state8.png}
 \end{figure}
 
 Nell'esempio, la configurazione iniziale è:
@@ -134,7 +141,7 @@ Le transizioni nei due stati paralleli possono essere sincronizzate introducendo
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{assets/UML/state/state9.png}
+    \includegraphics[width=0.7\linewidth]{assets/UML/state/state9.png}
 \end{figure}
 
 \newpage

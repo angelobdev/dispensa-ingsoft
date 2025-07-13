@@ -10,7 +10,6 @@ I \textbf{class diagram} sono i diagrammi UML più utilizzati. Descrivono le \te
 
 \paragraph{Classe} Rappresentata graficamente da rettangoli contenenti almeno il nome della classe e al più le sue caratteristiche. Le caratteristiche (o \textit{feature}) sono divise in \textit{proprietà} e \textit{operazioni}, queste possono avere diversi livelli di visibilità: \textit{public} (+), \textit{private} (-), \textit{protected} (\#) o \textit{package} ($\sim$).
 
-\newpage
 \paragraph{Proprietà} Rappresentano le caratteristiche strutturali di una classe (non temporanee, es. parametri in input di un metodo). Si possono esprimere sotto forma di \textit{attributo}:
 \begin{center}
     $\langle$visibilità$\rangle$ $\langle$nome$\rangle$ : $\langle$tipo$\rangle$ $\langle$molteplicità$\rangle$ = $\langle$default$\rangle$ \{$\langle$proprietà$\rangle$\}
@@ -34,7 +33,6 @@ Non esiste un metodo univoco di traduzione, ma in linguaggi moderni quali Java l
     \caption{\textbf{Associazione bidirezionale} - ogni oggetto Persona può avere una collezione di oggetti Automobile; ogni oggetto Automobile può avere proprietà opzionale di tipo Persona}
 \end{figure}
 
-\newpage
 \paragraph{Operazioni} Rappresentano caratteristiche funzionali delle istanze di una classe (azioni invocabili su di esse). Vengono rappresentate tramite stringhe composte come segue:
 \begin{center}
         $\langle$visibilità$\rangle$ $\langle$nome$\rangle$(lista\_parametri) : $\langle$tipo\_ritorno$\rangle$ \{$\langle$proprietà$\rangle$\}
@@ -53,6 +51,8 @@ UML distingue operazioni (dichiarazione di una procedura) e metodi (corpo dell'o
 
 \subparagraph{Static} Vengono definiti \textit{static} quegli attributi o quelle operazioni che si riferiscono alla classe e non alle sue istanze. Nel diagramma le caratteristiche \textit{static} vengono sottolineate.
 
+\newpage
+
 \paragraph{Generalizzazione} Anche i class diagram ammettono relazioni di generalizzazione che partono da classi \textit{specializzate} e puntano ad una classe \textit{generale}. In Java viene espressa con il concetto di \textit{ereditarietà} (classe specializzata sottoclasse di classe generica o superclasse - \textbf{Principio di sostituibilità di Liskov}).
 
 \begin{figure}[H]
@@ -61,19 +61,20 @@ UML distingue operazioni (dichiarazione di una procedura) e metodi (corpo dell'o
     \caption{Esempio di generalizzazione}
 \end{figure}
 
-\newpage
-
 Di seguito un esempio in Java che non rispetta il principio di Liskov:
-\begin{verbatim}
+\begin{minted}[
+    fontsize=\footnotesize,
+    linenos,
+]{java}
 public class Rettangolo {
     private double base;
     private double altezza;
 
-    public void setBase(double b){ base = b;}
+    public void setBase(double b) { base = b; }
     ...
-    public double getBase(){return base;}
+    public double getBase() { return base; }
     ...
-    public double getArea(){return base * altezza;}
+    public double getArea() { return base * altezza; }
 }
 
 public class Quadrato extends Rettangolo {
@@ -82,7 +83,8 @@ public class Quadrato extends Rettangolo {
     }
     ...
 }
-\end{verbatim}
+\end{minted}
+
 Sebbene \textit{geometricamente} un quadrato è un rettangolo, l'implementazione è \textbf{sbagliata} in quanto non deve essere possibile sostituire un Quadrato ad un Rettangolo laddove ci si aspetta il secondo. Si hanno quindi due alternative: rendere le classi \textbf{immutabili} o \textbf{separarle}.
 
 I class diagram ammettono il concetto di \textit{classe astratta} (non istanziabile) e \textit{operazione astratta} (solo dichiarata, priva di corpo), convenzionalmente indicate dal nome scritto in corsivo.
