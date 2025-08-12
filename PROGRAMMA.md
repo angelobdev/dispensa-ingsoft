@@ -91,9 +91,9 @@
 - [x] Usi di UML
 - [x] Diagrammi di UML
 - [x] Processo di sviluppo:
-  - [ ] Analisi Requisiti
-  - [ ] Progettazione
-  - [ ] Documentazione
+  - [x] Analisi Requisiti
+  - [x] Progettazione
+  - [x] Documentazione
 - [x] Class Diagram:
   - [x] Introduzione
   - [x] Proprietà
