@@ -6,32 +6,57 @@
 
 \paragraph{Definizione} Il patter Builder permette di separare la costruzione di un oggetto complesso dalla sua rappresentazione, in modo che lo stesso processo di costruzione possa essere utilizzato per creare rappresentazioni diverse.
 
-\paragraph{Problema} Prendiamo in considerazione un’applicazione capace di leggere documenti in formato RTF che può supportare la conversione in altri formati (ASCII, LaTeX).
+\paragraph{Motivazione} Prendiamo in considerazione un’applicazione capace di leggere documenti in formato RTF che può supportare la conversione in altri formati (ASCII, LaTeX).
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{assets/pattern/builder/builder-esempio.png}
+    \includegraphics[width=0.75\linewidth]{assets/pattern/builder/builder-esempio.png}
 \end{figure}
 
-\paragraph{Soluzione} Una soluzione consiste nel configurare la classe RTFReader con un oggetto conforme all’interfaccia TextConverter in grado di gestire la conversione in un altro formato. Il documento nel formato di uscita viene costruito man mano che gli elementi del documento RTF sono analizzati.
+Una soluzione consiste nel configurare la classe RTFReader con un oggetto conforme all’interfaccia TextConverter in grado di gestire la conversione in un altro formato. Il documento nel formato di uscita viene costruito man mano che gli elementi del documento RTF sono analizzati.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{assets/pattern/builder/builder-struttura.png}
+    \includegraphics[width=0.75\linewidth]{assets/pattern/builder/builder-struttura.png}
     \caption{Class Diagram del pattern Builder}
 \end{figure}
 
-\paragraph{Struttura e Conseguenze} Il pattern è composto da:
+\paragraph{Applicabilità} È consigliabile utilizzare il pattern Builder quando:
 \begin{itemize}
-    \item \textbf{BuilderIF}: specifica l’interfaccia astratta che crea le parti dell’oggetto Product. 
-    \item \textbf{ConcreteBuilder}: costruisce e assembla le parti del prodotto implementando l’interfaccia Builder; definisce e tiene traccia della rappresentazione che crea.
-    \item \textbf{Director}: costruisce un oggetto utilizzando l’interfaccia Builder.
-    \item \textbf{Product}: rappresenta l’oggetto complesso e include le classi che definiscono le parti che lo compongono, includendo le interfacce per assemblare le parti nel risultato finale.
+    \item L'algoritmo di creazione di un oggetto complesso è indipendente dalle parti che lo costituiscono.
+    \item Il processo di costruzione deve permettere rappresentazioni diverse pper l'oggetto costruito.
 \end{itemize}
 
-Permette quindi di: variare la rappresentazione interna di un prodotto, isolare il codice per la costruzione la rappresentazione e consente di avere maggiore controllo del processo di costruzione.
+\paragraph{Struttura} Il pattern è composto da:
+\begin{itemize}
+    \item \textbf{Builder}: specifica l’interfaccia astratta che crea le parti dell’oggetto Product (Alternativa step-by-step ad AbstractFactory \ref{abstract-factory}). 
+    \item \textbf{ConcreteBuilder}: costruisce e assembla le parti del prodotto implementando l’interfaccia Builder; definisce e tiene traccia della rappresentazione che crea.
+    \item \textbf{Director}: costruisce un oggetto utilizzando l’interfaccia Builder.
+    \item \textbf{Product}: rappresenta l’oggetto complesso e include le classi che definiscono le parti che lo compongono, includendo le interfacce per assemblare le parti nel risultato finale. (Spesso il builder è usato per costruire Composite \ref{composite})
+\end{itemize}
 
-Risolve allo stesso tempo il problema dei \textbf{costruttori telescopici}, e si propone come alternativa a tecnologie come JavaBeans.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{assets/pattern/builder/builder-sequence.drawio.png}
+    \caption{Sequence Diagram del pattern Builder}
+\end{figure}
+
+\begin{enumerate}
+    \item Il Client create un oggetto Director e lo configura con il Builder desiderato. 
+    \item Il Director notifica il Builder quando una parte di un prodotto deve essere costruita.
+    \item Il Builder gestisce la richiesta e aggiunge le parti richieste al Product.
+    \item Il Client richiede l'oggetto al Builder.
+\end{enumerate}
+
+\paragraph{Conseguenze} Il pattern Builder consente quindi di:
+\begin{itemize}
+    \item \textbf{Variare la rappresentazione interna di un prodotto}: nasconde la rappresentazione e la struttura interna del prodotto. Nasconde anche come il prodotto viene assemblato.
+    \item \textbf{Isolare il codice per la costruzione la rappresentazione}: Ogni ConcreteBuilder contiene tutto il codice necessario a creare ed assemblare un particolare tipo di prodotto. Diversi Director possono riusare lo stesso Builder per creare varianti di Product.
+    \item \textbf{Avere maggiore controllo del processo di costruzione}: il Builder costruisce iol prodotto step-by-step sotto la supervisione del Director.
+    \item \textbf{Risolvere il problema dei \textit{costruttori telescopici}} :si propone come alternativa a tecnologie come JavaBeans.
+\end{itemize}
+
+
 
 \newpage
 
@@ -109,12 +134,5 @@ NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8)
 
 \end{minted}
 
-\paragraph{Interazioni} L'utilizzo del pattern consiste nel creare un oggetto Director e configurarlo tramite l'oggetto Builder. Il Director informa il Builder ogni volta che una parte di Product deve essere costruita. Il Builder riceve e gestisce le richieste dal Director e aggiunge le parti al Product. Il client ottiene dal Builder il Product creato.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{assets/pattern/builder/builder-sequence.drawio.png}
-    \caption{Sequence Diagram del pattern Builder}
-\end{figure}
 
 \newpage

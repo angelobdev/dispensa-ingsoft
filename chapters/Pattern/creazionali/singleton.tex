@@ -6,9 +6,15 @@
 
 \paragraph{Definizione} Il pattern Singleton assicura che un classe abbia una sola istanza e fornisca un solo punto di accesso globale a tale istanza.
 
-\paragraph{Problema} In un sistema potrebbero esistere più stampanti, ma potrebbe essere presente soltanto una coda di stampa. In un sistema operativo dovrebbe essere presente solo un file system e un solo window manager
+\paragraph{Motivazione} In un sistema potrebbero esistere più stampanti, ma potrebbe essere presente soltanto una coda di stampa. In un sistema operativo dovrebbe essere presente solo un file system e un solo window manager
 
-\paragraph{Soluzione} Per assicurare che una classe abbia una sola istanza e che tale istanza sia facilmente accessibile per gli utilizzatori si può fare in modo che la classe stessa abbia la responsabilità di creare le proprie istanze. La classe può assicurare che nessun’altra istanza possa essere creata e può fornire un modo semplice per accedere all’istanza.
+Per assicurare che una classe abbia una sola istanza e che tale istanza sia facilmente accessibile per gli utilizzatori si può fare in modo che la classe stessa abbia la responsabilità di creare le proprie istanze. La classe può assicurare che nessun’altra istanza possa essere creata e può fornire un modo semplice per accedere all’istanza.
+
+\paragraph{Applicabilità} È consigliabile utilizzare il pattern Singleton quando:
+\begin{itemize}
+    \item Deve esistere esattamente un’istanza di una classe resa accessibile ai client attraverso un punto di accesso noto a tutti gli utilizzatori.
+    \item L’unica istanza deve poter essere estesa attraverso la definizione di sottoclassi ed i client devono essere in grado di utilizzare le istanze estese senza dover modificare il proprio codice.
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -16,11 +22,19 @@
     \caption{Class Diagram del pattern Singleton}
 \end{figure}
 
-\paragraph{Struttura e Conseguenze} Il pattern risulta essere applicabile in due casi in particolare:
+\paragraph{Struttura} Il pattern è composto da:
 \begin{itemize}
-    \item Quando deve esistere esattamente un’istanza di una classe resa accessibile ai client attraverso un punto di accesso noto a tutti gli utilizzatori.
-    \item Quando l’unica istanza deve poter essere estesa attraverso la definizione di sottoclassi ed i client devono essere in grado di utilizzare le istanze estese senza dover modificare il proprio codice.
+    \item \textbf{Singleton}: definisce un'operazione statica \textit{Instance()} che permette ai client di accedere alla sua unica istanza (della cui creazione è responsabile).
 \end{itemize}
+
+\paragraph{Conseguenze} Il pattern Singleton consente quindi di:
+\begin{itemize}
+    \item Controllare l'accesso all'istanza unica.
+    \item Ridurre il numero di variabili (name space)
+    \item Rifinire operazioni e rappresentazione
+\end{itemize}
+
+\newpage
 
 \textbf{Java}
 
@@ -35,7 +49,7 @@ public final class Singleton {
     
     public static synchronized Singleton getInstance() { 
         if (INSTANCE == null) { 
-            INSTANCE=new Singleton(); 
+            INSTANCE = new Singleton(); 
         } 
         return INSTANCE; 
     } 
