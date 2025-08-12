@@ -6,40 +6,63 @@
 
 \paragraph{Definizione} Il pattern Composite permette di comporre oggetti in strutture ad albero per rappresentare gerarchie \textit{parte-tutto} e consentire ai client di trattare oggetti singoli e composizioni in modo uniforme.
 
-\paragraph{Problema} Applicazioni quali editor grafici vettoriali o ambienti per la progettazione di circuiti consentono agli utenti di costruire diagrammi complessi a partire da semplici componenti. Componenti semplici possono essere raggruppati per costruire componenti più complessi che possono, a loro volta, essere utilizzati come parti di componenti ancor più complessi. Solitamente si introducono alcune classi per modellare gli oggetti semplici ed altre per rappresentare gli oggetti ottenuti per composizione.
+\paragraph{Motivazione} Applicazioni quali editor grafici vettoriali o ambienti per la progettazione di circuiti consentono agli utenti di costruire diagrammi complessi a partire da semplici componenti. Componenti semplici possono essere raggruppati per costruire componenti più complessi che possono, a loro volta, essere utilizzati come parti di componenti ancor più complessi. Solitamente si introducono alcune classi per modellare gli oggetti semplici ed altre per rappresentare gli oggetti ottenuti per composizione.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{assets/pattern/composite/composite-esempio.png}
+    \includegraphics[width=0.75\linewidth]{assets/pattern/composite/composite-esempio.png}
 \end{figure}
 
-\paragraph{Soluzione} Il pattern Composite introduce un’interfaccia comune per gli oggetti semplici e per quelli compositi in modo che il codice cliente li possa trattare uniformemente. Nell’esempio, le classi Line, Rectangle e Text definiscono gli oggetti primitivi. Il metodo \textit{draw()} implementa l’operazione di disegno. Poichè gli oggetti primitivi non hanno figli, le operazioni per la gestione dei componenti non sono implementate. La classe Picture è un aggregato di oggetti Graphic ed implementa \textit{draw()} invocandolo a sua volta sugli oggetti da cui è composto.
+Il pattern Composite introduce un’interfaccia comune per gli oggetti semplici e per quelli compositi in modo che il codice cliente li possa trattare uniformemente. Nell’esempio, le classi Line, Rectangle e Text definiscono gli oggetti primitivi. Il metodo \textit{draw()} implementa l’operazione di disegno. Poichè gli oggetti primitivi non hanno figli, le operazioni per la gestione dei componenti non sono implementate. La classe Picture è un aggregato di oggetti Graphic ed implementa \textit{draw()} invocandolo a sua volta sugli oggetti da cui è composto.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{assets/pattern/composite/composite-object.png}
-    \caption{Tipica struttura di oggetti Graphic ricorsivamente composti}
+    \caption{Object Diagram di esempio per il pattern Composite}
 \end{figure}
 
 \newpage
 
+\paragraph{Applicabilità} È consigliabile utilizzare il pattern Composite quando:
+\begin{itemize}
+    \item Si vuole rappresentare una gerarchia parte-tutto di oggetti;
+    \item Si vuole che i Client ignorino la differenza tra oggetti composti o foglie (sono interscambiabili).
+\end{itemize}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{assets/pattern/composite/composite-struttura.png}
+    \includegraphics[width=0.75\linewidth]{assets/pattern/composite/composite-struttura.png}
     \caption{Class Diagram del pattern Composite}
 \end{figure}
 
-\paragraph{Struttura e Conseguenze} Il pattern composite è composto da:
+\paragraph{Struttura} Il pattern composite è composto da:
 \begin{itemize}
     \item \textbf{Component} (Graphic): dichiara l’interfaccia per gli oggetti componibili. Può essere una classe astratta che fornisce un’implementazione di default per i metodi di gestione dei componenti figli. Introduce (opzionale) un metodo per accedere al componente genitore. 
     \item \textbf{Leaf} (Rectangle,Line, etc.): rappresenta gli oggetti primitivi i quali non hanno figli. 
     \item \textbf{Composite} (Picture): definisce il comportamento dei componenti che hanno figli. Memorizza i componenti figli e implementa i relativi metodi introdotti dall’interfaccia Component.
 \end{itemize}
 
+\paragraph{Conseguenze} Il pattern Composite consente quindi di:
+\begin{itemize}
+    \item Definire gerarchie formate da oggetti primitivi (Leaf) e oggetti composti (Composite);
+    \item Semplificare il codice Client;
+    \item Semplificare l'aggiunta di nuovi tipi di componenti;
+    \item Generalizzare il design del prodotto software;
+\end{itemize}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\linewidth]{assets/pattern/composite/composite-sequence.drawio.png}
+    \includegraphics[width=0.75\linewidth]{assets/pattern/composite/composite-sequence.drawio.png}
     \caption{Sequence Diagram del pattern Composite}
 \end{figure}
+
+\paragraph{Pattern correlati}
+\begin{itemize}
+    \item \textbf{Chain of Resposibility} (\ref{chain-of-responsability}): per operazioni di linking;
+    \item \textbf{Decorator} (\ref{decorator}): spesso usato insieme a Composite, di solito hanno una classe padre comune, permettono di aggiungere il supporto per le operazioni di Add, Remove e GetChild
+    \item \textbf{Flyweight} (\ref{flyweight}): permette di condividere oggetti Component;
+    \item \textbf{Iterator} (\ref{iterator}): permette di attraversare oggetti composti;
+    \item \textbf{Visitor} (\ref{visitor}): localizza operazioni e comportamento che altrimenti sarebbero distribuiti tra Leaf e Composite;
+\end{itemize}
 
 \newpage
