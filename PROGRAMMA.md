@@ -65,7 +65,7 @@
 - [x] Rilascio installazione e manutenzione
 
 - [x] Modello a cascata
-- [ ] Critica modello a cascata
+- [x] Critica modello a cascata
 - [x] Modello a cascata con feedback
 - [x] Problemi del modello a cascata
 - [x] Modelli Evolutivi
