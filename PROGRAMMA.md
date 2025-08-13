@@ -104,21 +104,21 @@
   - [x] Associazioni Bidirezionali
   - [x] Operazioni
   - [x] Generalizzazione
-  - [ ] Note e commenti
+  - [x] Note e commenti
   - [x] Dipendenza
-  - [ ] Concetti Avanzati:
-    - [ ] Operazioni ed attributi statici
-    - [ ] Proprietà derivate
-    - [ ] Aggregazione
-    - [ ] Composizione
-    - [ ] Interfacce astratte
-    - [ ] Associazioni qualificate
-    - [ ] Classi di associazione
+  - [x] Concetti Avanzati:
+    - [x] Operazioni ed attributi statici
+    - [x] Proprietà derivate
+    - [x] Aggregazione
+    - [x] Composizione
+    - [x] Interfacce astratte
+    - [x] Associazioni qualificate
+    - [x] Classi di associazione
     - [ ] Classi Parametriche
     - [ ] Enumeration
-    - [ ] Classi attive
-    - [ ] Non navigabilità
-    - [ ] Associazioni Riflessive
+    - [x] Classi attive
+    - [x] Non navigabilità
+    - [x] Associazioni Riflessive
 - [x] Casi d'uso
   - [x] Diagrammi casi d'uso
   - [x] Generalizzazione tra casi d'uso
@@ -142,7 +142,7 @@
 - [x] Struttura di un pattern
 - [x] Classificazione dei pattern
 
-- [ ] PATTERN:
+- [x] PATTERN:
 
   - [x] Adapter
   - [x] Decorator
@@ -166,7 +166,7 @@
   - [x] Template Method
   - [x] Chain of Responsibility
   - [x] Mediator
-  - [ ] Data Transfer Object
+  - [x] Data Transfer Object
 
 - [ ] Inheritance vs Delegation (Ereditarietà VS Composizione/Delegazione)
 - [ ] Task and Threads (TUTTO)
